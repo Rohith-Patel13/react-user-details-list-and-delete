@@ -1,0 +1,36 @@
+When the app loads:
+
+The App component initializes its state with searchInput and userDetailsList based on the provided data.
+The render method is called to initially display the list of user profiles.
+Typing in the search input:
+
+As you type in the search input field, the onChangeSearchInput function is triggered.
+The searchInput state is updated with the new value.
+The render method is called again, causing the UI to update with the filtered search results.
+Clicking the delete button in a user profile:
+
+Each UserProfile component is rendered based on the filtered search results.
+Each UserProfile component receives the deleteUser function as a prop from the App component.
+When you click the delete button in a user profile, the onDelete function in the corresponding UserProfile component is triggered.
+The onDelete function is executed:
+
+Inside the UserProfile component, the onDelete function is executed when the delete button is clicked.
+The onDelete function calls the deleteUser function passed down from the App component, passing the uniqueNo of the user profile as an argument.
+The deleteUser function is called:
+
+The deleteUser function in the App component is called with the uniqueNo of the user to be deleted.
+Inside the deleteUser function:
+It retrieves the current userDetailsList from the state.
+It filters out the user with the given uniqueNo, creating a new array without the deleted user.
+It updates the state with the new filtered userDetailsList.
+As the state is updated, the render method of the App component is called again.
+UI re-renders:
+
+The render method of the App component is called after the state update.
+The UI updates to reflect the new userDetailsList, which no longer includes the deleted user.
+The list of user profiles displayed on the screen will no longer show the deleted user's profile.
+In summary, clicking the delete button triggers a sequence of events that involve the UserProfile component, the deleteUser function in the App component, and state updates. The UI is re-rendered to display the updated list of user profiles after the deletion.
+
+
+
+
